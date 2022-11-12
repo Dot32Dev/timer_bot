@@ -10,6 +10,6 @@ module.exports = {
 				.setRequired(true),
 	async execute(interaction) {
 		const input = interaction.options.getString('input')
-		await interaction.reply('${input}');
+		await interaction.reply(`${input}`);
 	},
 };
