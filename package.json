@@ -1,0 +1,14 @@
+{
+  "name": "timer_bot_v2",
+  "version": "1.0.0",
+  "description": "Create timers within discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dot32",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.6.0"
+  }
+}
