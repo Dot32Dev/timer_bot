@@ -22,7 +22,7 @@ module.exports = {
 			{ name: '/timer', value: 'Asks the bot to reply to your message with a timer that counts down to the specified time.' },
 			{ name: '/timestamp', value: 'Is similar to /timer, but it replies with a timestamp of the specified time. This is so you can copy paste it and send a timer in your own message.' },
 			// { name: '\u200B', value: '\u200B' },
-			{ name: 'Bot Created By', value: 'Dot32#1186 \n\n Have any more questions? Consider joining my [Discord server](<https://discord.gg/Pswb8khdgQ>) or checking out the bots code on [GitHub](https://github.com/Dot32IsCool/timer_bot).', inline: true },
+			{ name: 'Bot Created By', value: '<@379191617627619328> \n\n Have any more questions? Consider joining my [Discord server](<https://discord.gg/Pswb8khdgQ>) or checking out the bots code on [GitHub](https://github.com/Dot32IsCool/timer_bot).', inline: true },
 		)
 		// .addFields({ name: 'Inline field title', value: 'Some value here', inline: true })
 		// .setImage('https://i.imgur.com/AfFp7pu.png')
