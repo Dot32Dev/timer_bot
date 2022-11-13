@@ -11,7 +11,7 @@ let second = d.getUTCSeconds()
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('timestamp')
-		.setDescription('Sends a timer in chat.')
+		.setDescription('Sends a timestamp of the specified time in chat.')
 		.addNumberOption(option =>
 			option.setName('years')
 				.setDescription('How many many years to count down for.'))
