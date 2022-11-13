@@ -1,0 +1,58 @@
+{
+    "data": {
+        "name": {
+            "zh-CN": "计时器"
+        },
+        "description": {
+            "zh-CN": "在聊天里发送一个计时器"
+        }
+    },
+    "options": {
+        "names": {
+            "years": {
+                "zh-CN": "年"
+            },
+            "months": {
+                "zh-CN": "月"
+            },
+            "weeks": {
+                "zh-CN": "周"
+            },
+            "days": {
+                "zh-CN": "天"
+            },
+            "hours": {
+                "zh-CN": "小时"
+            },
+            "minutes": {
+                "zh-CN": "分钟"
+            },
+            "seconds": {
+                "zh-CN": "秒"
+            }
+        },
+        "descriptions": {
+            "years": {
+                "zh-CN": "计时器的年数"
+            },
+            "months": {
+                "zh-CN": "计时器的月数"
+            },
+            "weeks": {
+                "zh-CN": "计时器的周数"
+            },
+            "days": {
+                "zh-CN": "计时器的天数"
+            },
+            "hours": {
+                "zh-CN": "计时器的小时数"
+            },
+            "minutes": {
+                "zh-CN": "计时器的分钟数"
+            },
+            "seconds": {
+                "zh-CN": "计时器的秒数"
+            }
+        }
+    }
+}

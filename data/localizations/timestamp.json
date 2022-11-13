@@ -1,0 +1,58 @@
+{
+    "data": {
+        "name": {
+            "zh-CN": "时间戳"
+        },
+        "description": {
+            "zh-CN": "在聊天里发送一个时间戳"
+        }
+    },
+    "options": {
+        "names": {
+            "years": {
+                "zh-CN": "年"
+            },
+            "months": {
+                "zh-CN": "月"
+            },
+            "weeks": {
+                "zh-CN": "周"
+            },
+            "days": {
+                "zh-CN": "天"
+            },
+            "hours": {
+                "zh-CN": "小时"
+            },
+            "minutes": {
+                "zh-CN": "分钟"
+            },
+            "seconds": {
+                "zh-CN": "秒"
+            }
+        },
+        "descriptions": {
+            "years": {
+                "zh-CN": "时间戳的年数"
+            },
+            "months": {
+                "zh-CN": "时间戳的月数"
+            },
+            "weeks": {
+                "zh-CN": "时间戳的周数"
+            },
+            "days": {
+                "zh-CN": "时间戳的天数"
+            },
+            "hours": {
+                "zh-CN": "时间戳的小时数"
+            },
+            "minutes": {
+                "zh-CN": "时间戳的分钟数"
+            },
+            "seconds": {
+                "zh-CN": "时间戳的秒数"
+            }
+        }
+    }
+}
