@@ -21,16 +21,17 @@ const rest = new REST({ version: '10' }).setToken(token);
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
 		// The put method is used to fully refresh all commands in the guild with the current set
-		// const data = await rest.put(
-		// 	Routes.applicationGuildCommands(clientId, guildId),
-		// 	{ body: commands },
-		// );
-		const data = await rest.put(
+		const data1 = await rest.put(
+			Routes.applicationGuildCommands(clientId, guildId),
+			{ body: commands },
+		);
+		const data2 = await rest.put(
 			Routes.applicationCommands(clientId),
 			{ body: commands },
 		);
 
-		console.log(`Successfully reloaded ${data.length} application (/) commands.`);
+		console.log(`Successfully reloaded ${data1.length} application (/) commands.`);
+		console.log(`Successfully reloaded ${data2.length} application (/) commands.`);
 	} catch (error) {
 		// And of course, make sure you catch and log any errors!
 		console.error(error);
