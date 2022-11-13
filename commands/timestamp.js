@@ -53,6 +53,10 @@ module.exports = {
 
 		let datum = new Date(Date.UTC(year+years, month+months, day + days + weeks*7, hour + hours, minute + minutes, second + seconds))
 
-		await interaction.reply("`<t:" + datum.getTime()/1000 + ":R>`");
+		if (isNaN(datum.getTime()) ) {
+			await interaction.reply({ content: 'Failed to process timestamp. Please use a smaller time period.', ephemeral: true });
+		} else {
+			await interaction.reply("`<t:" + datum.getTime()/1000 + ":R>`");
+		}
 	},
 };
