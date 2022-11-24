@@ -29,7 +29,7 @@ function readScheduleFile() {
  * @param {array} scheduleData.events | Array of events
  */
 function writeScheduleFile(scheduleData) {
-    fs.writeFileSync('schedules.json', JSON.stringify(scheduleData))
+    fs.writeFileSync('schedules.json', JSON.stringify(scheduleData, null, '\t'))
 }
 
 async function checkSchedules() {
