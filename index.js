@@ -7,6 +7,10 @@ const { token } = require('./config.json');
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
+module.exports = client
+
+const { checkSchedules } = require('./util/scheduler');
+
 client.commands = new Collection();
 
 const commandsPath = path.join(__dirname, 'commands');
@@ -27,7 +31,11 @@ for (const file of commandFiles) {
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
 client.once(Events.ClientReady, c => {
 	console.log(`Ready! Logged in as ${c.user.tag}`);
-});
+    checkSchedules()
+    setInterval(() => {
+        checkSchedules()
+    }, 5000)
+});	
 
 // Log in to Discord with your client's token
 client.login(token);
@@ -47,6 +55,19 @@ client.on(Events.InteractionCreate, async interaction => {
 		await command.execute(interaction);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true })
+		.catch(() => {
+			interaction.followUp({ content: 'There was an error while executing this command!', ephemeral: true })
+			.catch(() => {
+				console.warn('Unable to send error message to user.');
+			})
+		})
 	}
 });
+
+function handleError(error) {
+	console.error(error);
+}
+
+process.on('unhandledRejection', handleError);
+process.on('uncaughtException', handleError);

@@ -29,6 +29,9 @@
             },
             "seconds": {
                 "zh-CN": "秒"
+            },
+            "ping": {
+                "zh-CN": "提醒"
             }
         },
         "descriptions": {
@@ -52,6 +55,9 @@
             },
             "seconds": {
                 "zh-CN": "计时器的秒数"
+            },
+            "ping": {
+                "zh-CN": "计时器结束时是否提醒"
             }
         }
     }
