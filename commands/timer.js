@@ -4,14 +4,6 @@ const locale = require('../data/localizations/timer.json');
 const { createPingBackEvent } = require('../util/scheduler');
 const { CommandInteraction } = require('discord.js');
 
-let d = new Date()
-let year = d.getUTCFullYear()
-let month = d.getUTCMonth()
-let day = d.getUTCDate()
-let hour = d.getUTCHours()
-let minute = d.getUTCMinutes()
-let second = d.getUTCSeconds()
-
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('timer')
