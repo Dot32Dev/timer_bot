@@ -34,7 +34,7 @@ client.once(Events.ClientReady, c => {
     checkSchedules()
     setInterval(() => {
         checkSchedules()
-    }, 5000)
+    }, 1000)
 });	
 
 // Log in to Discord with your client's token

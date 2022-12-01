@@ -5,14 +5,6 @@ const { createPingBackEvent } = require('../util/scheduler');
 const { CommandInteraction } = require('discord.js');
 const timeSync = require('../util/ntp')
 
-let d = new Date()
-let year = d.getUTCFullYear()
-let month = d.getUTCMonth()
-let day = d.getUTCDate()
-let hour = d.getUTCHours()
-let minute = d.getUTCMinutes()
-let second = d.getUTCSeconds()
-
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('timer')
@@ -87,7 +79,7 @@ module.exports = {
 		let datum = new Date(Date.UTC(year + years, month + months, day + days + weeks * 7, hour + hours, minute + minutes, second + seconds) + offset)
 
 		if (interaction.options.getBoolean('ping') && (datum.getTime() - d.getTime()) > 31536000000) {
-			return interaction.reply({ content: 'Pings can only be valid for a year.', ephemeral: true })
+			return interaction.reply({ content: 'Ping timers can only be valid for a year.', ephemeral: true })
 		}
 
 		if (isNaN(datum.getTime())) {
