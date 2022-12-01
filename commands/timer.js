@@ -87,7 +87,7 @@ module.exports = {
 		} else {
 			const message = await interaction.reply(
 				{
-					content: `Timer ends <t:${datum.getTime() / 1000}:R>${interaction.options.getBoolean('ping') ? `\nYou will be pinged at the end of the timer.` : ''}`,
+					content: `Timer ends <t:${Math.round(datum.getTime() / 1000)}:R>${interaction.options.getBoolean('ping') ? `\nYou will be pinged at the end of the timer.` : ''}`,
 					fetchReply: true
 				}
 			);
