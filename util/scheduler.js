@@ -11,7 +11,6 @@
 const { TextChannel } = require('discord.js')
 const fs = require('fs')
 const client = require('../index')
-const timeSync = require('./ntp')
 module.exports = {
     createPingBackEvent,
     checkSchedules
@@ -37,7 +36,7 @@ async function checkSchedules() {
     const schedule = readScheduleFile()
     schedule.events.forEach(async event => {
         //check if event is in the past, then run it and remove it from the schedule
-        if (event.date < (await timeSync.getTime()).now) {
+        if (event.date + 10000 < Date.now()) {
             const index = schedule.events.indexOf(event)
             schedule.events.splice(index, 1)
             handleEvent(event)
