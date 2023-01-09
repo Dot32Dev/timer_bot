@@ -36,7 +36,7 @@ async function checkSchedules() {
     const schedule = readScheduleFile()
     schedule.events.forEach(async event => {
         //check if event is in the past, then run it and remove it from the schedule
-        if (event.date + 10000 < Date.now()) {
+        if (event.date < Date.now()) {
             const index = schedule.events.indexOf(event)
             schedule.events.splice(index, 1)
             handleEvent(event)
