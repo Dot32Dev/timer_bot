@@ -3,7 +3,6 @@ const { SlashCommandBuilder } = require('discord.js');
 const locale = require('../data/localizations/timer.json');
 const { createPingBackEvent } = require('../util/scheduler');
 const { CommandInteraction } = require('discord.js');
-const timeSync = require('../util/ntp')
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -73,10 +72,7 @@ module.exports = {
 		let minute = d.getUTCMinutes()
 		let second = d.getUTCSeconds()
 
-		//Fix for time desync
-		const { offset } = await timeSync.getTime()
-
-		let datum = new Date(Date.UTC(year + years, month + months, day + days + weeks * 7, hour + hours, minute + minutes, second + seconds) + offset)
+		let datum = new Date(Date.UTC(year + years, month + months, day + days + weeks * 7, hour + hours, minute + minutes, second + seconds - 10)) // I have no reason why the seconds seem to be 10 seconds ahead by default
 
 		if (interaction.options.getBoolean('ping') && (datum.getTime() - d.getTime()) > 31536000000) {
 			return interaction.reply({ content: 'Ping timers can only be valid for a year.', ephemeral: true })
@@ -87,7 +83,7 @@ module.exports = {
 		} else {
 			const message = await interaction.reply(
 				{
-					content: `Timer ends <t:${Math.round(datum.getTime() / 1000)}:R>${interaction.options.getBoolean('ping') ? `\nYou will be pinged at the end of the timer.` : ''}`,
+					content: `Timer ends <t:${datum.getTime() / 1000}:R>${interaction.options.getBoolean('ping') ? `\nYou will be pinged at the end of the timer.` : ''}`,
 					fetchReply: true
 				}
 			);
